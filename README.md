@@ -1,4 +1,4 @@
-# ✨ ClarityAutoTool
+# ClarityAutoTool
 
 ![Minecraft](https://img.shields.io/badge/Minecraft-1.21.x-green?style=for-the-badge&logo=minecraft)
 ![Paper](https://img.shields.io/badge/Server-Paper-blue?style=for-the-badge)
