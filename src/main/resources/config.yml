@@ -7,5 +7,10 @@ messages:
   reloaded: "&aAutoTool configuration reloaded!"
   no_permission: "&cYou don't have permission to do that."
 
+# List of worlds where AutoTool is disabled
+disabled_worlds:
+  - "world_nether"
+  - "world_the_end"
+
 # List of player UUIDs that have disabled autotool
 autotool_disabled: []

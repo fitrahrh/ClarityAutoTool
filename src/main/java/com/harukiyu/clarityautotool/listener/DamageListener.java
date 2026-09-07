@@ -18,6 +18,8 @@ public class DamageListener implements Listener {
     public void onBlockDamage(BlockDamageEvent e) {
         if (e.getInstaBreak()) return;
         
+        if (plugin.getConfigManager().isWorldDisabled(e.getBlock().getWorld().getName())) return;
+        
         if (!e.getPlayer().hasPermission("autotool.use")) return;
         
         if (!plugin.getConfigManager().isAutoToolEnabled(e.getPlayer())) return;

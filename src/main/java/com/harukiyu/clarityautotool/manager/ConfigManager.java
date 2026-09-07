@@ -14,6 +14,7 @@ public class ConfigManager {
     
     private final Main plugin;
     private final Set<String> disabledPlayers = new HashSet<>();
+    private final Set<String> disabledWorlds = new HashSet<>();
     
     public ConfigManager(Main plugin) {
         this.plugin = plugin;
@@ -21,9 +22,18 @@ public class ConfigManager {
 
     public void loadConfig() {
         plugin.reloadConfig();
+        
         disabledPlayers.clear();
         List<String> list = plugin.getConfig().getStringList("autotool_disabled");
         disabledPlayers.addAll(list);
+        
+        disabledWorlds.clear();
+        List<String> worldsList = plugin.getConfig().getStringList("disabled_worlds");
+        disabledWorlds.addAll(worldsList);
+    }
+
+    public boolean isWorldDisabled(String worldName) {
+        return disabledWorlds.contains(worldName);
     }
 
     public String getMessage(String key) {
