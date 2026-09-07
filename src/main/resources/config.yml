@@ -1,0 +1,11 @@
+# ClarityAutoTool Configuration
+
+# Messages
+messages:
+  autotool_on: "&aAutoTool has been enabled!"
+  autotool_off: "&cAutoTool has been disabled!"
+  reloaded: "&aAutoTool configuration reloaded!"
+  no_permission: "&cYou don't have permission to do that."
+
+# List of player UUIDs that have disabled autotool
+autotool_disabled: []

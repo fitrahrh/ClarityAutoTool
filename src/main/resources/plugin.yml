@@ -1,0 +1,20 @@
+name: ClarityAutoTool
+version: '1.0'
+main: com.harukiyu.clarityautotool.Main
+api-version: '1.21'
+authors: [ Harukiyu ]
+description: Automatically change your item to what's best in your hotbar when breaking blocks.
+
+commands:
+  autotool:
+    description: Toggle AutoTool or reload config.
+    aliases: [ at ]
+    permission: autotool.use
+
+permissions:
+  autotool.use:
+    description: Allows using autotool command and feature
+    default: true
+  autotool.reload:
+    description: Allows reloading autotool config
+    default: op
