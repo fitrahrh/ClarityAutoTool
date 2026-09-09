@@ -7,8 +7,9 @@ messages:
   reloaded: "&aAutoTool configuration reloaded!"
   no_permission: "&cYou don't have permission to do that."
 
-# Should we use whitelist mode? If true, autotool only works in enabled_worlds.
-# If false, autotool works everywhere EXCEPT disabled_worlds.
+# Should we use whitelist mode? 
+# - If TRUE: AutoTool ONLY works in 'enabled_worlds'. All other worlds are blacklisted automatically, and the 'disabled_worlds' list is IGNORED.
+# - If FALSE: AutoTool works everywhere EXCEPT in 'disabled_worlds'. The 'enabled_worlds' list is IGNORED.
 use_whitelist: false
 
 # List of worlds where AutoTool is disabled (Blacklist mode)
