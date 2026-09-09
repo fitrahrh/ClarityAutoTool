@@ -7,10 +7,22 @@ messages:
   reloaded: "&aAutoTool configuration reloaded!"
   no_permission: "&cYou don't have permission to do that."
 
-# List of worlds where AutoTool is disabled
+# Should we use whitelist mode? If true, autotool only works in enabled_worlds.
+# If false, autotool works everywhere EXCEPT disabled_worlds.
+use_whitelist: false
+
+# List of worlds where AutoTool is disabled (Blacklist mode)
+# You can use '*' at the end of the world name for prefix matching (e.g., 'world_*' disables world_1, world_2, etc.)
 disabled_worlds:
   - "world_nether"
   - "world_the_end"
+
+# List of worlds where AutoTool is enabled (Whitelist mode)
+# Only works if use_whitelist is set to true.
+# You can also use '*' at the end of the world name for prefix matching here.
+enabled_worlds:
+  - "world"
+  - "world_spawn"
 
 # List of player UUIDs that have disabled autotool
 autotool_disabled: []

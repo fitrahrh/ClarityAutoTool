@@ -4,7 +4,7 @@
 ![Paper](https://img.shields.io/badge/Server-Paper-blue?style=for-the-badge)
 ![Java](https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=openjdk)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
-![Version](https://img.shields.io/badge/Version-1.1-brightgreen?style=for-the-badge)
+![Version](https://img.shields.io/badge/Version-1.2-brightgreen?style=for-the-badge)
 
 **Smart Tool Switcher** A lightweight, optimized Minecraft Paper plugin that automatically switches your active hand item to the best tool in your hotbar when breaking blocks.
 
@@ -47,7 +47,7 @@
 
 ## 📦 Installation
 
-1. Download `ClarityAutoTool-1.1.jar`
+1. Download `ClarityAutoTool-1.2.jar`
 2. Place the `.jar` file into your server's `plugins/` folder
 3. Restart or reload the server
 4. Players can immediately use `/autotool` to toggle the feature

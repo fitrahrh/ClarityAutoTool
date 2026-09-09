@@ -14,7 +14,9 @@ public class ConfigManager {
     
     private final Main plugin;
     private final Set<String> disabledPlayers = new HashSet<>();
-    private final Set<String> disabledWorlds = new HashSet<>();
+    private final List<String> disabledWorlds = new ArrayList<>();
+    private final List<String> enabledWorlds = new ArrayList<>();
+    private boolean useWhitelist = false;
     
     public ConfigManager(Main plugin) {
         this.plugin = plugin;
@@ -28,12 +30,34 @@ public class ConfigManager {
         disabledPlayers.addAll(list);
         
         disabledWorlds.clear();
-        List<String> worldsList = plugin.getConfig().getStringList("disabled_worlds");
-        disabledWorlds.addAll(worldsList);
+        disabledWorlds.addAll(plugin.getConfig().getStringList("disabled_worlds"));
+        
+        enabledWorlds.clear();
+        enabledWorlds.addAll(plugin.getConfig().getStringList("enabled_worlds"));
+        
+        useWhitelist = plugin.getConfig().getBoolean("use_whitelist", false);
     }
 
     public boolean isWorldDisabled(String worldName) {
-        return disabledWorlds.contains(worldName);
+        if (useWhitelist) {
+            return !matchesWorld(worldName, enabledWorlds);
+        } else {
+            return matchesWorld(worldName, disabledWorlds);
+        }
+    }
+
+    private boolean matchesWorld(String worldName, List<String> list) {
+        for (String pattern : list) {
+            if (pattern.endsWith("*")) {
+                String prefix = pattern.substring(0, pattern.length() - 1);
+                if (worldName.startsWith(prefix)) {
+                    return true;
+                }
+            } else if (worldName.equalsIgnoreCase(pattern)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public String getMessage(String key) {
